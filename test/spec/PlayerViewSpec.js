@@ -39,7 +39,6 @@ describe('PlayerView', function() {
         , thirdSong = library.at(2)
         , songQueue = appView.model.get('songQueue');
       // Set up a queue of three songs
-      debugger;
       songQueue.add(firstSong);
       songQueue.add(secondSong);
       songQueue.add(thirdSong);
