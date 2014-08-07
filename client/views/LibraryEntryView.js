@@ -7,12 +7,18 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
+      $('tr').css('background-color', 'white');
       this.model.play();
+      this.$el.css('background-color', 'yellow');
+      // this.model.highlight();
+    },
+    'click button': function(event) {
+        event.stopPropagation();
     }
   },
 
   render: function(){
-    return this.$el.html(this.template(this.model.attributes));
+    return this.$el.html(this.template(this.model.attributes)).append('<button class="addToQueue">+</button>');
   }
 
 });
