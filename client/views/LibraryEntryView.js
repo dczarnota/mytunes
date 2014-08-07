@@ -8,13 +8,18 @@ var LibraryEntryView = Backbone.View.extend({
   events: {
     'click': function() {
       $('tr').css('background-color', 'white');
-      this.model.play();
+      this.model.enqueue();
       this.$el.css('background-color', 'yellow');
       // this.model.highlight();
     },
     'click button': function(event) {
         event.stopPropagation();
-    }
+        console.log(this);
+        this.model.enqueue();
+
+        // debugger;
+        // songQueueLibrary.set({song: this.model});
+      }
   },
 
   render: function(){
